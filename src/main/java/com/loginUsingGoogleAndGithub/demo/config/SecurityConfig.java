@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .oauth2Login(oauth2 -> oauth2
                         .userInfoEndpoint(userInfo -> userInfo
                                 .oidcUserService(oidcUserService) // Google OIDC
-                                .userService((OAuth2UserService<OAuth2UserRequest, OAuth2User>) authService) // Custom OAuth2 User Service
+                                .userService(authService) // Custom OAuth2 User Service
                         )
                 )
                 .sessionManagement(session -> session
